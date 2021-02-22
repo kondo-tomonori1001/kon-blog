@@ -34,20 +34,8 @@ export const getPostData = async (id:string) => {
 // ルーティング用パスの設定
 export const getAllPostIds = async () => {
   const posts = await cmsFetch('blog');
-  // const fileNames = fs.readdirSync(postsDirectory);
-  // console.log(fileNames);
   return posts.map(fileName => {
-    /*
-    次のようなデータを返す
-      [
-        params:{
-          id:"fileName"
-        },
-        params:{
-          id:"fileName"
-        },
-      ]
-    */
+    
     return {
       params:{
         id:fileName.id,

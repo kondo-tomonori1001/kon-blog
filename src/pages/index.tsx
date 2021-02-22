@@ -1,22 +1,19 @@
 import Link from 'next/link';
 import { MainLayout } from 'src/layouts/main'
 import { GetStaticProps } from 'next';
-
 import { getPostsData } from "src/lib/posts";
-
+import { Card } from "src/components/top/Card"
 export default function Home({allPostsData}) {
   return (
     <MainLayout home>
-      <p>Hello world!</p>
-      <Link href="/posts/first-post">link to first-post</Link>
-      <Link href="/posts/style-demo/cssModules">CSS Modules Demo</Link>
-      <hr/>
       <ul>
-        {allPostsData.map(({ id, title }) => (
+        {allPostsData.map(({ id, title,　thumbnail }) => (
           <li key={id}>
-            {/* <Link href={`/posts/${id}`}>{title}</Link> */}
-            <br />
-            {title}
+            <Link href={`/posts/${id}`}>
+              <a>
+                <Card src={thumbnail.url} title={title}/>
+              </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -24,7 +21,7 @@ export default function Home({allPostsData}) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const allPostsData = await getPostsData();
   return {
     props: {
