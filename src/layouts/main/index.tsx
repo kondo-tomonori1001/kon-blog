@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import Header from '../../components/Header';
+import { Header } from '../../components/Header';
 
 type Props = {
   children:React.ReactNode,
@@ -15,7 +15,7 @@ export const MainLayout:React.FC<Props> = ({children,home,page}):JSX.Element => 
         <title>{!home ? (`${page} | `):""}MyBlog</title>
       </Head>
       <Header />
-      <main>{children}</main>
+      <main className="dark:bg-gray-800 min-h-screen">{children}</main>
       {!home && (
         <div>
           <Link href="/">
