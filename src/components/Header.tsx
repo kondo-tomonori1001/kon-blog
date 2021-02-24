@@ -1,15 +1,18 @@
+import Link from 'next/link';
 import { useTheme } from "next-themes";
 
 export const Header = () => {
   const { theme, setTheme } = useTheme();
   return (
-    <header className="bg-white dark:bg-gray-800 flex justify-between items-center dark:text-white border-b-2 p-4">
+    <header className="bg-gray-200 dark:bg-gray-800 flex justify-between items-center dark:text-white p-4">
       <div>
-        <p>MyBlog</p>
+      <Link href="/">
+        <p className="cursor-pointer">MyBlog</p>
+      </Link>
       </div>
       <div className="flex items-center">
         <button
-          className="text-white dark:text-gray-900 bg-gray-800 dark:bg-white p-2"
+          className="text-white dark:text-gray-900 bg-gray-800 dark:bg-gray-100 p-2"
           onClick={() => {
             setTheme(theme === "light" ? "dark" : "light");
           }}
@@ -18,8 +21,8 @@ export const Header = () => {
         </button>
         <nav>
           <ul className="flex">
-            <li className="px-2">nav1</li>
-            <li className="px-2">nav2</li>
+            {/* <li className="px-2">nav1</li>
+            <li className="px-2">nav2</li> */}
           </ul>
         </nav>
       </div>

@@ -15,7 +15,7 @@ export const MainLayout:React.FC<Props> = ({children,home,page}):JSX.Element => 
         <title>{!home ? (`${page} | `):""}MyBlog</title>
       </Head>
       <Header />
-      <main className="dark:bg-gray-800 min-h-screen">{children}</main>
+      <main className="bg-gray-50 dark:bg-gray-700 dark:text-white min-h-screen">{children}</main>
       {!home && (
         <div>
           <Link href="/">
