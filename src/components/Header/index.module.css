@@ -1,0 +1,11 @@
+.toggle:focus{
+  outline: none;
+}
+.circle{
+  left: 4px;
+  right: auto;
+}
+.isDark{
+  right: 4px;
+  left: auto;
+}

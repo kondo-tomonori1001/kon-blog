@@ -3,13 +3,14 @@ import { MainLayout } from 'src/layouts/main'
 import { GetStaticProps } from 'next';
 import { getPostsData } from "src/lib/posts";
 import { Card } from "src/components/top/Card"
+import { ProfCard } from "src/components/ProfCard"
 
 export default function Home({allPostsData}) {
   console.log(allPostsData);
   return (
     <MainLayout home>
-      <div className="flex">
-        <ul className="flex w-3/4 p-8">
+      <div className="flex items-start pt-8">
+        <ul className="flex flex-wrap w-3/4 p-4">
           {allPostsData.map(({ id, title, thumbnail, updatedAt}) => (
             <li key={id} className="w-1/2 px-4">
               <Link href={`/posts/${id}`}>
@@ -20,10 +21,8 @@ export default function Home({allPostsData}) {
             </li>
           ))}
         </ul>
-        <div className="w-1/4">
-          <div>
-            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-          </div>
+        <div className="w-1/4 p-4">
+          <ProfCard />
         </div>
       </div>
     </MainLayout>
