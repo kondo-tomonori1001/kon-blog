@@ -6,7 +6,6 @@ import { Card } from "src/components/top/Card"
 import { ProfCard } from "src/components/ProfCard"
 
 export default function Home({allPostsData}) {
-  console.log(allPostsData);
   return (
     <MainLayout home>
       <div className="flex items-start pt-8">

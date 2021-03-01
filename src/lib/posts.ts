@@ -23,11 +23,9 @@ export const getPostsData = () => {
 
 // ブログ記事のデータ取得
 export const getPostData = async (id:string) => {
-
   const data = await fetch(`https://code-forest.microcms.io/api/v1/blog/${id}/`, key)
     .then(res => res.json())
     .catch(() => console.log('API error'));
-
   return data;
 }
 
