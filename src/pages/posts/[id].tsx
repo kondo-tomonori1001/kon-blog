@@ -1,8 +1,11 @@
+import {useState,useEffect} from 'react';
 import { MainLayout } from "src/layouts/main";
 import { getAllPostIds, getPostData } from "src/lib/posts";
 import { GetStaticProps, GetStaticPaths } from "next";
 import cheerio from "cheerio";
 import styles from 'src/pages/posts/style.module.css';
+import clsx from 'clsx';
+import { observeFunc } from 'src/lib/util';
 
 type Props = {
   postData: {
@@ -14,21 +17,29 @@ type Props = {
 };
 
 export default function Post({ postData, toc }) {
+  const [sideIsFixed,toggleFixed] = useState(true);
+  useEffect(() => {
+    headingAddClass('h2');
+    // headingCheck(); 
+    // fixedSide();
+  })
+
   return (
     <MainLayout page={postData.title}>
-      <div className="max-w-screen-xl mx-auto">
+      <div className=" mx-auto">
         <main className="p-8">
-          <div>
+          <div id="articleTitle">
             <h1 className="text-center font-bold text-3xl">{postData.title}</h1>
           </div>
-          <div className="flex">
+          <div className="flex max-w-screen-xl mx-auto">
             <article className="w-3/4 p-8">
-              <div className="bg-white dark:bg-gray-700 p-8">
+              <div className='bg-white dark:bg-gray-700 p-8'>
                 <h1>{postData.title}</h1>
+                <h2 className="test">テスト</h2>
                 <div className={styles.contents} dangerouslySetInnerHTML={{ __html: postData.body }} />
               </div>
             </article>
-            <aside className="w-1/4 p-8">
+            <aside id="sideMenu" className='sticky top-0 block w-1/4 h-full py-8'>
               <div>
                 <div
                   className="toc bg-white dark:bg-gray-700 p-8"
@@ -43,37 +54,22 @@ export default function Post({ postData, toc }) {
   );
 }
 
-/*---------------------------------
- intersectionObserver
- ---------------------------------*/
- function observeFunc(targetEl:string, rootMargin:string, inFn, outFn) {
-  const callback = function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        // target要素が画面内に表示されたら実行
-        inFn();
-      } else {
-        // target要素が画面外になると実行
-        outFn();
-      }
-    })
+const headingAddClass = (heading:string) => {
+  const body = document.getElementsByClassName('article_body')[0];
+  const tags = body.querySelectorAll(heading);
+  tags.forEach((el) => {
+    el.classList.add(`${heading}_title`);
+  })
+}
+
+const headingCheck = () => {
+  const inFn = () => {
+    console.log('in');
   }
-  // intersection observerの設定 
-  const options = {
-    root: null,
-    rootMargin: rootMargin,
-    threshold: 0,
+  const outFn = () => {
+    console.log('out');
   }
-  // intersection observerのインスタンスを生成
-  const observer = new IntersectionObserver(callback, options);
-  // 要素の監視
-  const target = document.querySelector(targetEl);
-  //  propsに格納された要素がページ内に無かった場合、observerを実行しない
-  if (target === null) {
-    return;
-  } else {
-    observer.observe(target);
-  }
+  observeFunc('.h2_title',true,'0px',inFn,outFn)
 }
 
 /*---------------------------------
