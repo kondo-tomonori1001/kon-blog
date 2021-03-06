@@ -25,3 +25,9 @@
 .contents p{
   line-height: 2rem;
 }
+
+.contents code{
+  padding: 2rem;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
