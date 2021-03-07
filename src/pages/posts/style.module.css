@@ -26,6 +26,11 @@
   line-height: 2rem;
 }
 
+.contents iframe{
+  width: 100% !important;
+  height: 400px !important;
+}
+
 .contents code{
   padding: 2rem;
   margin-bottom: 20px;

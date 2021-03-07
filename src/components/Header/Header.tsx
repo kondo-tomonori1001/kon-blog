@@ -9,7 +9,9 @@ export const Header = () => {
     <header className="bg-white dark:bg-gray-700 flex justify-between items-center dark:text-white p-4">
       <div>
       <Link href="/">
-        <p className="cursor-pointer">MyBlog</p>
+        <p className="cursor-pointer">
+          MY BLOG
+        </p>
       </Link>
       </div>
       <div className="flex items-center">
