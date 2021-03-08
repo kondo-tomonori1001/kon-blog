@@ -36,3 +36,12 @@
   margin-bottom: 20px;
   border-radius: 6px;
 }
+
+@media(max-width:768px){
+  .contents h2{
+    font-size: 1.25rem;
+  }
+  .contents code{
+    padding: 0.5rem;
+  }
+}

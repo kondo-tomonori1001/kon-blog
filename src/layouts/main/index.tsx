@@ -17,14 +17,14 @@ export const MainLayout:React.FC<Props> = ({children,home,page}):JSX.Element => 
       <Header />
       <main className="bg-blue-100 text-sm md:text-base dark:bg-gray-800 dark:text-white min-h-screen">
         <div className="max-w-screen-xl mx-auto">{children}</div>
-      </main>
-      {!home && (
+        {!home && (
         <div>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
       )}
+      </main>
     </>
   )
 }

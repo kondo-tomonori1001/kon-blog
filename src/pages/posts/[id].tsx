@@ -8,8 +8,7 @@ import clsx from "clsx";
 import hljs from "highlightjs";
 import "highlightjs/styles/night-owl.css";
 import { observeFunc } from "src/lib/util";
-import { FaClock } from 'react-icons/fa';
-
+import { FaClock } from "react-icons/fa";
 
 type Props = {
   postData: {
@@ -29,15 +28,14 @@ export default function Post({ postData, highLighted, toc }) {
   return (
     <MainLayout page={postData.title}>
       <div className=" mx-auto">
-        <main className="p-8">
+        <main className="p-4 md:p-8">
           <div id="articleTitle">
-          <div>
-            <FaClock 
-            color=""
-            className={"text-gray-400 inline-block mr-1"}
-          />
-            <p className="inline-block text-gray-400 text-sm mt-1">{new Date(postData.updatedAt).toLocaleDateString()}</p>
-          </div>
+            <div>
+              <FaClock color="" className={"text-gray-400 inline-block mr-1"} />
+              <p className="inline-block text-gray-400 text-sm mt-1">
+                {new Date(postData.updatedAt).toLocaleDateString()}
+              </p>
+            </div>
             <h1 className="mt-2 text-left font-bold text-3xl text-gray-700 dark:text-white">
               {postData.title}
             </h1>
@@ -50,19 +48,9 @@ export default function Post({ postData, highLighted, toc }) {
             </ul>
           </div>
           <div className="md:flex block">
-            <article className="md:w-3/4 md:pr-8 py-8 overflow-hidden">
-              <div className="bg-white dark:bg-gray-700 p-8 rounded">
-                <h1>{postData.title}</h1>
-                <h2 className="test">テスト</h2>
-                <div
-                  className={styles.contents}
-                  dangerouslySetInnerHTML={{ __html: highLighted }}
-                />
-              </div>
-            </article>
             <aside
               id="sideMenu"
-              className="sticky top-0 block w-1/4 h-full max-h-screen overflow-y-auto py-8 rounded overflow-hidden"
+              className="md:sticky md:order-2 top-0 block md:w-1/4 h-full max-h-screen overflow-y-auto py-8 rounded overflow-hidden"
             >
               <div>
                 <img
@@ -76,6 +64,16 @@ export default function Post({ postData, highLighted, toc }) {
                 />
               </div>
             </aside>
+            <article className="md:w-3/4 md:pr-8 py-8 overflow-hidden">
+              <div className="bg-white dark:bg-gray-700 p-4 md:p-8 rounded">
+                <h1>{postData.title}</h1>
+                <h2 className="test">テスト</h2>
+                <div
+                  className={styles.contents}
+                  dangerouslySetInnerHTML={{ __html: highLighted }}
+                />
+              </div>
+            </article>
           </div>
         </main>
       </div>
