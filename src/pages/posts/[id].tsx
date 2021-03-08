@@ -8,6 +8,8 @@ import clsx from "clsx";
 import hljs from "highlightjs";
 import "highlightjs/styles/night-owl.css";
 import { observeFunc } from "src/lib/util";
+import { FaClock } from 'react-icons/fa';
+
 
 type Props = {
   postData: {
@@ -29,10 +31,26 @@ export default function Post({ postData, highLighted, toc }) {
       <div className=" mx-auto">
         <main className="p-8">
           <div id="articleTitle">
-            <h1 className="text-center font-bold text-3xl">{postData.title}</h1>
+          <div>
+            <FaClock 
+            color=""
+            className={"text-gray-400 inline-block mr-1"}
+          />
+            <p className="inline-block text-gray-400 text-sm mt-1">{new Date(postData.updatedAt).toLocaleDateString()}</p>
           </div>
-          <div className="flex md:block">
-            <article className="w-3/4 pr-8 py-8 overflow-hidden">
+            <h1 className="mt-2 text-left font-bold text-3xl text-gray-700 dark:text-white">
+              {postData.title}
+            </h1>
+            <ul className="flex mt-4">
+              {postData.tag.map((el: string) => (
+                <li className="inline text-white bg-yellow-600 dark:bg-blue-700 dark:text-white mr-3 dark:border-0 px-4 rounded-full">
+                  {el}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="md:flex block">
+            <article className="md:w-3/4 md:pr-8 py-8 overflow-hidden">
               <div className="bg-white dark:bg-gray-700 p-8 rounded">
                 <h1>{postData.title}</h1>
                 <h2 className="test">テスト</h2>

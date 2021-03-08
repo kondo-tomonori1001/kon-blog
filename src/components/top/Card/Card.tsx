@@ -5,7 +5,7 @@ import { FaClock } from 'react-icons/fa';
 export const Card = (props) => {
   console.log(props);
   return(
-    <div className={clsx(styles.card,"bg-white dark:text-white dark:bg-gray-600 rounded-md overflow-hidden duration-300 hover:shadow-lg mb-8")}>
+    <div className={clsx(styles.card,"bg-white dark:text-white dark:bg-gray-600 rounded-md overflow-hidden duration-300 hover:shadow-lg mb-8 w-100")}>
       <div className="relative">
         <figure className={styles.cardImage}>
           <img className="" src={props.src} alt=""/>
@@ -21,7 +21,7 @@ export const Card = (props) => {
         <p className="text-gray-400 text-sm mt-1 mb-2">{props.desc}</p>
         <ul className="flex">
           {props.tag.map((el:string) => (
-            <li className="inline text-white bg-yellow-600 dark:bg-blue-700 dark:text-white mr-3 dark:border-0 px-4 py-1">{ el }</li>
+            <li className="inline text-white bg-yellow-600 dark:bg-blue-700 dark:text-white mr-3 dark:border-0 px-4 rounded-full">{ el }</li>
           ))}
         </ul>
       </div>
