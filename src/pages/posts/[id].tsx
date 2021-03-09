@@ -31,7 +31,7 @@ export default function Post({ postData, highLighted, toc }) {
         <main className="p-4 md:p-8">
           <div id="articleTitle">
             <div>
-              <FaClock color="" className={"text-gray-400 inline-block mr-1"} />
+              <FaClock color="" className={"text-gray-500 inline-block mr-1"} />
               <p className="inline-block text-gray-400 text-sm mt-1">
                 {new Date(postData.updatedAt).toLocaleDateString()}
               </p>
