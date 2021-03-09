@@ -5,7 +5,7 @@ type Post = {
 }
 
 const key = {
-  headers: {'X-API-KEY': process.env.API_KEY},
+  headers: {'X-API-KEY': '01f3751e-6b2e-4081-a328-d755509627a9'},
 };
 
 // microCMS fetch
