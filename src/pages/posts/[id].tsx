@@ -34,7 +34,7 @@ export default function Post({ postData, highLighted, toc }) {
       <Head>
         <meta name="keywords" content={postData.keyword} />
         <meta content={postData.description} name="description" />
-        <meta property="og:image" content={postData.thumbnail.urls} />
+        <meta property="og:image" content={postData.thumbnail.url} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://kon-blog.vercel.app/" />
         <meta property="og:site_name" content="kon-blog" />
