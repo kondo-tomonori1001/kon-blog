@@ -13,6 +13,7 @@ export const MainLayout:React.FC<Props> = ({children,home,page}):JSX.Element => 
     <>
       <Head>
         <title>{!home ? (`${page} | `):""}MyBlog</title>
+        <meta charSet="utf-8"></meta>
       </Head>
       <Header />
       <main className="bg-blue-100 text-sm md:text-base dark:bg-gray-800 dark:text-white min-h-screen">

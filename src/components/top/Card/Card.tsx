@@ -3,7 +3,6 @@ import styles from 'src/components/top/Card/index.module.css';
 import { FaClock } from 'react-icons/fa';
 
 export const Card = (props) => {
-  console.log(props);
   return(
     <div className={clsx(styles.card,"bg-white dark:text-white dark:bg-gray-600 rounded-md overflow-hidden duration-300 hover:shadow-lg mb-8 w-100")}>
       <div className="relative">

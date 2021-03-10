@@ -2,8 +2,19 @@
   font-size: 1.5rem;
   line-height: 3rem;
   font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+
+  padding: 0.5rem 1rem;
+  color: #494949;
+  border-top: solid 2px #ffaf58;
+  border-bottom: solid 2px #ffaf58;
+}
+
+.contents.isDark h2{
+  color: #fff;
+  border-top: solid 2px #7db4e6;
+  border-bottom: solid 2px #7db4e6;
 }
 
 .contents h3{
@@ -12,14 +23,32 @@
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
+  display: inline-block;
+  color: #494949;
+  padding: 0.5rem 1rem 0;
+  border-bottom: solid 1px #ffaf58;
+}
+
+
+.contents.isDark h3{
+  color: #fff;
+  padding: 0.5rem 1rem 0;
+  border-bottom: solid 1px #7db4e6;
 }
 
 .contents h4{
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 2.5rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 5px;
   margin-bottom: 5px;
+
+  padding-left: 1rem;
+  color: #494949;
+}
+
+.contents.isDark h4{
+  color: #fff;
 }
 
 .contents p{
@@ -40,6 +69,12 @@
 @media(max-width:768px){
   .contents h2{
     font-size: 1.25rem;
+  }
+  .contents h3{
+    font-size: 1.1rem;
+  }
+  .contents h4{
+    font-size: 0.95rem;
   }
   .contents code{
     padding: 0.5rem;

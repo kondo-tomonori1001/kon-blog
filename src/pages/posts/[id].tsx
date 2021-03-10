@@ -9,6 +9,9 @@ import hljs from "highlightjs";
 import "highlightjs/styles/night-owl.css";
 import { observeFunc } from "src/lib/util";
 import { FaClock } from "react-icons/fa";
+import { useTheme } from "next-themes";
+import Head from 'next/head';
+
 
 type Props = {
   postData: {
@@ -20,64 +23,77 @@ type Props = {
 };
 
 export default function Post({ postData, highLighted, toc }) {
+  const { theme, setTheme } = useTheme();
   useEffect(() => {
     // headingAddClass('h2');
     // headingCheck();
     // fixedSide();
   });
   return (
-    <MainLayout page={postData.title}>
-      <div className=" mx-auto">
-        <main className="p-4 md:p-8">
-          <div id="articleTitle">
-            <div>
-              <FaClock color="" className={"text-gray-500 inline-block mr-1"} />
-              <p className="inline-block text-gray-400 text-sm mt-1">
-                {new Date(postData.updatedAt).toLocaleDateString()}
-              </p>
-            </div>
-            <h1 className="mt-2 text-left font-bold text-3xl text-gray-700 dark:text-white">
-              {postData.title}
-            </h1>
-            <ul className="flex mt-4">
-              {postData.tag.map((el: string) => (
-                <li className="inline text-white bg-yellow-600 dark:bg-blue-700 dark:text-white mr-3 dark:border-0 px-4 rounded-full">
-                  {el}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="md:flex block">
-            <aside
-              id="sideMenu"
-              className="md:sticky md:order-2 top-0 block md:w-1/4 h-full max-h-screen overflow-y-auto py-8 rounded overflow-hidden"
-            >
+    <>
+      <Head>
+        <meta name="keywords" content={postData.keyword} />
+        <meta content={postData.description} name="description" />
+        <meta property="og:image" content={postData.thumbnail.urls} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://kon-blog.vercel.app/" />
+        <meta property="og:site_name" content="kon-blog" />
+        <meta property="og:description" content={postData.description} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      <MainLayout page={postData.title}>
+        <div className=" mx-auto">
+          <main className="p-4 md:p-8">
+            <div id="articleTitle">
               <div>
-                <img
-                  src={postData.thumbnail.url}
-                  className="block align-bottom mb-4 rounded"
-                  alt=""
-                />
-                <div
-                  className="toc bg-white dark:bg-gray-700 p-8 rounded"
-                  dangerouslySetInnerHTML={{ __html: toc }}
-                />
+                <FaClock color="" className={"text-gray-500 inline-block mr-1"} />
+                <p className="inline-block text-gray-400 text-sm mt-1">
+                  {new Date(postData.updatedAt).toLocaleDateString()}
+                </p>
               </div>
-            </aside>
-            <article className="md:w-3/4 md:pr-8 py-8 overflow-hidden">
-              <div className="bg-white dark:bg-gray-700 p-4 md:p-8 rounded">
-                <h1>{postData.title}</h1>
-                <h2 className="test">テスト</h2>
-                <div
-                  className={styles.contents}
-                  dangerouslySetInnerHTML={{ __html: highLighted }}
-                />
-              </div>
-            </article>
-          </div>
-        </main>
-      </div>
-    </MainLayout>
+              <h1 className="mt-2 text-left font-bold text-3xl text-gray-700 dark:text-white">
+                {postData.title}
+              </h1>
+              <ul className="flex mt-4">
+                {postData.tag.map((el: string) => (
+                  <li className="inline text-white bg-yellow-600 dark:bg-blue-700 dark:text-white mr-3 dark:border-0 px-4 rounded-full">
+                    {el}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="md:flex block">
+              <aside
+                id="sideMenu"
+                className="md:sticky md:order-2 top-0 block md:w-1/4 h-full max-h-screen overflow-y-auto py-8 rounded overflow-hidden"
+              >
+                <div>
+                  <img
+                    src={postData.thumbnail.url}
+                    className="block align-bottom mb-4 rounded"
+                    alt=""
+                  />
+                  <div
+                    className="toc bg-white dark:bg-gray-700 p-8 rounded"
+                    dangerouslySetInnerHTML={{ __html: toc }}
+                  />
+                </div>
+              </aside>
+              <article className="md:w-3/4 md:pr-8 py-8 overflow-hidden">
+                <div className="bg-white dark:bg-gray-700 p-4 md:p-8 rounded">
+                  <h1>{postData.title}</h1>
+                  <h2 className="test">テスト</h2>
+                  <div
+                    className={clsx(styles.contents,theme === 'dark' && styles.isDark)}
+                    dangerouslySetInnerHTML={{ __html: highLighted }}
+                  />
+                </div>
+              </article>
+            </div>
+          </main>
+        </div>
+      </MainLayout>
+    </>
   );
 }
 
