@@ -38,6 +38,7 @@ export default function Post({ postData, highLighted, toc }) {
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://kon-blog.vercel.app/" />
         <meta property="og:site_name" content="kon-blog" />
+        <meta property="og:title" content={postData.title} />
         <meta property="og:description" content={postData.description} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>

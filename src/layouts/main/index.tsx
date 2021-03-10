@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { Header } from '../../components/Header/Header';
+import { getPostData } from 'src/lib/posts';
 
 type Props = {
   children:React.ReactNode,
