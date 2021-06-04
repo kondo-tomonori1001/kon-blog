@@ -8,8 +8,8 @@ import { ProfCard } from "src/components/ProfCard";
 export default function Home({ allPostsData }) {
   return (
     <MainLayout home>
-      <div className="md:flex items-start pt-8">
-        <ul className="flex flex-wrap md:w-3/4 p-4">
+      <div className="xl:flex items-start pt-8">
+        <ul className="flex flex-wrap xl:w-3/4 p-4">
           {allPostsData.map(
             ({ id, title, thumbnail, updatedAt, tag, description }) => (
               <li key={id} className="sm:w-1/2 w-full px-4">
@@ -28,7 +28,7 @@ export default function Home({ allPostsData }) {
             )
           )}
         </ul>
-        <div className="md:w-1/4 md:p-4">
+        <div className="xl:w-1/4 xl:p-4">
           <ProfCard />
         </div>
       </div>

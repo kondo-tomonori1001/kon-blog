@@ -1,0 +1,12 @@
+.profBg{
+  height: 180px;
+  object-fit: cover;
+}
+
+.logo{
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-top: -75px;
+}

@@ -14,9 +14,10 @@ export const MainLayout:React.FC<Props> = ({children,home,page}):JSX.Element => 
   return(
     <>
       <Head>
-        <title>{!home ? (`${page} | `):""}MyBlog</title>
+        <title>{!home ? (`${page} | `):""}KON BLOG</title>
         <meta charSet="utf-8"></meta>
         <meta property="og:type" content="website" />
+        <link rel="icon" href="/images/favicon.ico"></link>
         {/* Google Analytics */}
         {existsGaId && (
             <>
@@ -40,9 +41,9 @@ export const MainLayout:React.FC<Props> = ({children,home,page}):JSX.Element => 
         <div className="max-w-screen-xl mx-auto">{children}</div>
         {!home && (
         <div>
-          <Link href="/">
+          {/* <Link href="/">
             <a>← Back to home</a>
-          </Link>
+          </Link> */}
         </div>
       )}
       </main>

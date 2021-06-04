@@ -123,14 +123,14 @@ const genToc = (body: string) => {
   const $ = cheerio.load(body, { decodeEntities: false });
   let genHtml = "";
   genHtml = genHtml + '<ul class="toc_list">';
-  $("h2,h3").each((index, el) => {
+  $("h2").each((index, el) => {
     const text = $(el).html();
     const tag = $(el)[0].name;
     const refId = $(el)[0].attribs.id;
     genHtml =
       genHtml +
       `<li class="toc_${tag}" key=${index}>` +
-      `  <a href="#${refId}">${text}</a>` +
+      `  <a href="#${refId}">${index}) ${text}</a>` +
       "</li>";
   });
   genHtml = genHtml + "</ul>";
