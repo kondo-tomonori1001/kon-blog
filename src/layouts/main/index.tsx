@@ -17,6 +17,8 @@ export const MainLayout:React.FC<Props> = ({children,home,page}):JSX.Element => 
         <title>{!home ? (`${page} | `):""}KON BLOG</title>
         <meta charSet="utf-8"></meta>
         <meta property="og:type" content="website" />
+        <meta property="og:image" content={home ? ('/images/ogp.png') : ''} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/images/favicon.ico"></link>
         {/* Google Analytics */}
         {existsGaId && (

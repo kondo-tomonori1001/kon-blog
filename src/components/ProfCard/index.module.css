@@ -1,12 +1,19 @@
 .profBg{
   height: 180px;
+  width: 100%;
   object-fit: cover;
 }
 
 .logo{
-  /* display: block; */
+  /* display: none; */
   width: 150px;
   margin: 0 auto;
   border-radius: 50%;
   margin-top: -75px;
+}
+
+@media only screen and(min-width:1024px){
+  .logo{
+    display: none;
+  }
 }

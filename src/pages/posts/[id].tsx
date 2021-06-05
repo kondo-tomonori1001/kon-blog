@@ -66,7 +66,7 @@ export default function Post({ postData, highLighted, toc }) {
             <div className="md:flex block">
               <aside
                 id="sideMenu"
-                className="md:sticky md:order-2 top-0 block md:w-1/4 h-full max-h-screen overflow-y-auto py-8 rounded overflow-hidden"
+                className="md:sticky md:order-2 top-0 block md:w-1/4 h-full max-h-screen md:max-h-full overflow-y-auto py-8 rounded overflow-hidden"
               >
                 <div>
                   <img
