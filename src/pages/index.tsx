@@ -8,11 +8,11 @@ import { ProfCard } from "src/components/ProfCard";
 export default function Home({ allPostsData }) {
   return (
     <MainLayout home>
-      <div className="xl:flex items-start pt-8">
+      <div className="xl:flex items-start pt-8 py-8">
         <ul className="flex flex-wrap xl:w-3/4 p-4">
           {allPostsData.map(
             ({ id, title, thumbnail, updatedAt, tag, description }) => (
-              <li key={id} className="sm:w-1/2 w-full px-4">
+              <li key={id} className="sm:w-1/2 w-full mb-8 px-4">
                 <Link href={`/posts/${id}`}>
                   <a>
                     <Card
