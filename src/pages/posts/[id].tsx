@@ -75,15 +75,13 @@ export default function Post({ postData, highLighted, toc }) {
                     alt=""
                   />
                   <div
-                    className="toc bg-white dark:bg-gray-700 p-8 rounded"
+                    className="toc list-decimal bg-white dark:bg-gray-700 p-8 rounded"
                     dangerouslySetInnerHTML={{ __html: toc }}
                   />
                 </div>
               </aside>
               <article className="md:w-3/4 md:pr-8 py-8 overflow-hidden">
                 <div className="bg-white dark:bg-gray-700 p-4 md:p-8 rounded">
-                  <h1>{postData.title}</h1>
-                  <h2 className="test">テスト</h2>
                   <div
                     className={clsx(styles.contents,theme === 'dark' && styles.isDark)}
                     dangerouslySetInnerHTML={{ __html: highLighted }}
@@ -122,7 +120,7 @@ const headingCheck = () => {
 const genToc = (body: string) => {
   const $ = cheerio.load(body, { decodeEntities: false });
   let genHtml = "";
-  genHtml = genHtml + '<ul class="toc_list">';
+  genHtml = genHtml + '<ol class="toc_list list-decimal">';
   $("h2").each((index, el) => {
     const text = $(el).html();
     const tag = $(el)[0].name;
@@ -130,10 +128,10 @@ const genToc = (body: string) => {
     genHtml =
       genHtml +
       `<li class="toc_${tag}" key=${index}>` +
-      `  <a href="#${refId}">${index}) ${text}</a>` +
+      `  <a href="#${refId}">${text}</a>` +
       "</li>";
   });
-  genHtml = genHtml + "</ul>";
+  genHtml = genHtml + "</ol>";
   return genHtml;
 };
 

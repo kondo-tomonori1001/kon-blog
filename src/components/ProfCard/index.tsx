@@ -12,9 +12,10 @@ export const ProfCard = () => {
       <div className="p-4">
         <p className="mb-4 text-center font-bold">KON BLOG</p>
         <p className="text-sm">
-          <span>地方WEB制作会社のフロントエンドエンジニアです。</span><br />
-          <span>Vue.js、React、Wordpress（ブロックエディタ）について学んでいます。</span><br />
-          <span>仕事や学習で習得したことを分かりやすく発信します。</span>
+          <span>地方WEB制作会社のフロントエンドエンジニア</span><br />
+          <span>Vue.js、React、WordPressに興味があります！</span>
+          <span>（このブログはNext.js + microCMSで構築）</span><br />
+          <span>仕事や学習で習得したことを分かりやすく発信中</span><br />
         </p>
       </div>
     </div>
