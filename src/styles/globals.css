@@ -10,7 +10,18 @@ a {
   text-decoration: none;
 }
 
-a:hover{
+article a{
+  color: #0073aa;
+  text-decoration: underline;
+}
+article a:hover{
+  text-decoration: none;
+}
+article ul{
+  list-style: disc;
+  padding-left: 30px;
+}
+.toc a:hover{
   opacity: 0.7;
 }
 
