@@ -12,7 +12,7 @@ export default function Home({ allPostsData }) {
       <Head>
         <meta name="keywords" content="" />
         <meta content="地方WEB制作会社フロントエンドエンジニアのブログです" name="description" />
-        <meta property="og:image" content="/images/ogp.png" />
+        <meta property="og:image" content="https://kon-blog.vercel.app/images/ogp.png" />
         <meta property="og:url" content="https://kon-blog.vercel.app/" />
         <meta property="og:site_name" content="kon-blog" />
         <meta property="og:title" content="KON-BLOG" />
