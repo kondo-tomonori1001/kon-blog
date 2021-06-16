@@ -14,7 +14,7 @@ export default function Home({ allPostsData }) {
             ({ id, title, thumbnail, updatedAt, tag, description }) => (
               <li key={id} className="sm:w-1/2 w-full mb-8 px-4">
                 <Link href={`/posts/${id}`}>
-                  <a>
+                  <a className="block h-full">
                     <Card
                       src={thumbnail.url}
                       title={title}

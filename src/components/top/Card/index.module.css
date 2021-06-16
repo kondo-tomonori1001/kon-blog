@@ -6,6 +6,10 @@
   transition: .3s;
 }
 
+.card:hover a{
+  opacity: 1;
+}
+
 .card:hover img{
   transform: scale(1.05);
 }
@@ -15,6 +19,7 @@
   padding-top:52.5%;
 
 }
+
 
 .cardImage img{
   position: absolute;
