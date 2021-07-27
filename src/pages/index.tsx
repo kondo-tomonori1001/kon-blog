@@ -11,12 +11,12 @@ export default function Home({ allPostsData }) {
     <>
       <Head>
         <meta name="keywords" content="" />
-        <meta content="地方WEB制作会社フロントエンドエンジニアのブログです" name="description" />
+        <meta content="WEB制作会社に勤めるフロントエンドエンジニアのブログです" name="description" />
         <meta property="og:image" content="https://kon-blog.vercel.app/images/ogp.png" />
         <meta property="og:url" content="https://kon-blog.vercel.app/" />
         <meta property="og:site_name" content="kon-blog" />
         <meta property="og:title" content="KON-BLOG" />
-        <meta property="og:description" content="地方WEB制作会社フロントエンドエンジニアのブログです"></meta>
+        <meta property="og:description" content="WEB制作会社に勤めるフロントエンドエンジニアのブログです"></meta>
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <MainLayout home>
